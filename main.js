@@ -12,14 +12,8 @@ $(document).ready(function() {
         e.preventDefault();
         
         const enderecoDaNovaImagem = $('#endereco-imagem-nova').val();
-        const novoItem = $('<li></li>');
-        console.log(enderecoDaNovaImagem)
-        console.log(novoItem)
-        
-        
-        $(`<img scr="${enderecoDaNovaImagem}" />`).appendTo(novoItem);
-        console.log(enderecoDaNovaImagem)
-        console.log(novoItem)
+        const novoItem = $('<li style="display: none"></li>');
+        $(`<img src="${enderecoDaNovaImagem}" />`).appendTo(novoItem);
         $(`
             <div class="overlay-imagem-link">
                 <a href="${enderecoDaNovaImagem}" target="_blank" title="Ver imagem em tamanho real">
@@ -27,10 +21,8 @@ $(document).ready(function() {
                 </a>
             </div>
         `).appendTo(novoItem);
-        console.log(enderecoDaNovaImagem)
-        console.log(novoItem)
-
         $(novoItem).appendTo('ul');
+        $(novoItem).fadeIn(1000);
         $('#endereco-imagem-nova').val('');
     })
 })
